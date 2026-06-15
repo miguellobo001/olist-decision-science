@@ -53,50 +53,6 @@ data/
     └── product_category_name_translation.csv
 ```
 
-### Opção 2 — Download via Kaggle API
-
-Também é possível baixar os dados pela API do Kaggle.
-
-Primeiro, instale a biblioteca:
-
-```bash
-pip install kaggle
-```
-
-Depois, configure sua credencial do Kaggle:
-
-1. Acesse sua conta no Kaggle.
-2. Vá em **Account**.
-3. Na seção **API**, clique em **Create New Token**.
-4. Um arquivo chamado `kaggle.json` será baixado.
-5. Coloque esse arquivo na pasta correta.
-
-No macOS/Linux:
-
-```bash
-mkdir -p ~/.kaggle
-mv ~/Downloads/kaggle.json ~/.kaggle/
-chmod 600 ~/.kaggle/kaggle.json
-```
-
-No Windows, coloque o arquivo em:
-
-```text
-C:\Users\SEU_USUARIO\.kaggle\kaggle.json
-```
-
-Depois, rode o comando abaixo na raiz do projeto:
-
-```bash
-kaggle datasets download -d olistbr/brazilian-ecommerce -p data/raw --unzip
-```
-
-Ao final, os arquivos `.csv` devem estar dentro de:
-
-```bash
-data/raw/
-```
-
 ## Estrutura do projeto
 
 ```text
@@ -126,21 +82,6 @@ olist-decision-science/
 └── docs/
     └── perguntas_negocio.md
 ```
-
-## Observação sobre versionamento dos dados
-
-Os arquivos da pasta `data/raw/` não devem ser enviados para o GitHub.
-
-Por isso, o `.gitignore` deve conter:
-
-```gitignore
-data/raw/
-*.csv
-*.xlsx
-*.parquet
-```
-
-Assim, o projeto mantém apenas o código, notebooks e documentação, enquanto os dados são baixados diretamente da fonte original.
 
 ## Primeiras análises previstas
 
